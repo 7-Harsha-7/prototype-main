@@ -10,7 +10,6 @@ app.use("/img", express.static(__dirname + "assets/img"))
 app.use("/js", express.static(__dirname + "assets/js"))
 app.use("/vendor", express.static(__dirname + "assets/vendor"))
  
-//vghasgdhjkjhghjk
 app.get("/",(req,res) => {
     
     res.render("index")
