@@ -1,18 +1,18 @@
 const express = require("express")
 const app = express()
-// const articleRouter = require("./routes/")
 
+app.set("views", "./views")
 app.set("view engine", "ejs")
 
-// app.use("/articles", articleRouter)
+app.use(express.static('assets'))
+app.use("/css", express.static(__dirname + "assets/css"))
+app.use("/img", express.static(__dirname + "assets/img"))
+app.use("/js", express.static(__dirname + "assets/js"))
+app.use("/vendor", express.static(__dirname + "assets/vendor"))
  
 
 app.get("/",(req,res) => {
-    // const articles = [{
-    //     title: "Test Article", 
-    //     createdAt: new Date(),
-    //     description: "Test Description"
-    // }]
+    
     res.render("index")
 })
 app.get("/team",(req,res) => {
